@@ -79,7 +79,7 @@ def text_extract(img, lan, slang, dlang):
     translator = Translator()
     if text != "\n":
         translated = translator.translate(text, src=slang, dest=dlang)
-        return translated.text
+        return translated.text
     else:
         return "No text found"
 
