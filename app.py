@@ -76,12 +76,12 @@ def text_extract(img, lan, slang, dlang):
     # Load the image
     gray = preprocess(img)
     text = pytesseract.image_to_string(gray, lang=lan)
-    
-    translator = Translator()
-    translated = translator.translate(text, src=slang, dest=dlang)
-    
-    
-    return translated.text
+    if text == "":
+        return "No text found"
+    else: 
+        translator = Translator()
+        translated = translator.translate(text, src=slang, dest=dlang)
+        return translated.text
 
 uploaded_file = st.file_uploader("Choose a file")
 picture = st.camera_input("Take a Picture")
