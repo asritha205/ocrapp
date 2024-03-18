@@ -79,8 +79,14 @@ def text_extract(img, lan, slang, dlang):
     if not text:
         return "Text not found"
     translator = Translator()
-    translated = translator.translate(text, src=slang, dest=dlang)
-    return translated.text
+    try:
+        translated = translator.translate(text, src=slang, dest=dlang)
+        translated_text = translated.text
+    except Exception as e:
+        print("Translation error:", e)
+        translated_text = "Translation error occurred"
+    
+    return translated_text
     
 
 uploaded_file = st.file_uploader("Choose a file")
