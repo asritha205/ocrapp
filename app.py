@@ -12,7 +12,7 @@ import cv2
 from googletrans import Translator
 from PIL import Image
 
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = r'/usr/bin/tesseract'
 
 language_mapping = {
     'tel': 'te',  # Telugu
