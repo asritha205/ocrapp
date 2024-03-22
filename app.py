@@ -75,7 +75,7 @@ def preprocess(img):
 def text_extract(img, lan, slang, dlang):
     # Load the image
     gray = preprocess(img)
-    text = pytesseract.image_to_string(gray, lang=lan)
+    text = pytesseract.image_to_string(img, lang=lan)
     if not text:
         return "Text not found"
     translator = Translator()
